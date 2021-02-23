@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -37,6 +38,24 @@ namespace Katas.Tests
         Array.Sort(sorted);
         return sorted;
       }
+    }
+
+    public static String SpinWords(string sentence)
+    {
+      String[] words = sentence.Split(" ");
+      StringBuilder builder = new StringBuilder();
+      foreach (var item in words)
+      {
+        String toAdd = item;
+        if(item.Length>=5)
+        {
+          toAdd = new string(item.ToCharArray().Reverse().ToArray());
+        }
+        builder.Append(toAdd);
+        builder.Append(" ");
+      }
+
+      return builder.ToString().Trim();
     }
 
     public static long FindNextSquare(long num)

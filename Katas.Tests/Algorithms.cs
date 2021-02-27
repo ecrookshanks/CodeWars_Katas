@@ -83,6 +83,27 @@ namespace Katas.Tests
 
       return matchBad.Count + "/" + len;
     }
+
+    public static string FirstNonRepeatingLetter(string s)
+    {
+      if (s.Length ==1)
+      {
+        return s;
+      }
+
+      foreach (char c in s)
+      {
+        if (s.Count(i => char.ToLower(i) == char.ToLower(c)) == 1)
+        {
+          return c.ToString();
+        }
+      }
+
+      return "";
+
+    }
+
+
   }
  
  }

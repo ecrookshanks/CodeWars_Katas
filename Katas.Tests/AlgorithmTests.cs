@@ -36,5 +36,16 @@ namespace Katas.Tests
         string s="aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
         Assert.Equal("3/56", Algorithms.PrinterError(s));
     }
+
+    [Fact]
+    public void BasicTestsFirstNonRepeatingChar()
+    {
+      Assert.Equal("a", Algorithms.FirstNonRepeatingLetter("a"));
+      Assert.Equal("t", Algorithms.FirstNonRepeatingLetter("stress"));
+      Assert.Equal("e", Algorithms.FirstNonRepeatingLetter("moonmen"));
+      Assert.Equal("E", Algorithms.FirstNonRepeatingLetter("EFDDB"));
+      Assert.Equal("\u007f", Algorithms.FirstNonRepeatingLetter(
+        "\u007faKruoZhit{i`AMWXSigGkeJ\\LvVKq ^ AQ"));
+    }
   }
 }

@@ -40,6 +40,35 @@ namespace Katas.Tests
       }
     }
 
+    public static string PigIt(string str)
+    {
+      const string suffix = "ay";
+      string[] puncs = { ".", "!", "?" };
+
+      string[] words = str.Split();
+
+      StringBuilder sb = new StringBuilder();
+
+      foreach (string item in words)
+      {
+        if (puncs.Contains(item))
+        {
+          sb.Append(item + " ");
+        }
+        else
+        {
+          char ch1 = item[0];
+          string rest = item.Substring(1);
+
+          sb.Append(rest + ch1 + suffix + ' ');
+        }
+        
+      }
+
+      return sb.ToString().Trim();
+
+    }
+
     public static String SpinWords(string sentence)
     {
       String[] words = sentence.Split(" ");
